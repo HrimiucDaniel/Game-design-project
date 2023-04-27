@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 91268153}
   m_Layer: 0
   m_Name: Up Hit Box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,9 +198,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 91268150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12955061c213dae45bf070234e74aba5, type: 3}
+  m_Script: {fileID: 11500000, guid: 694745cb88c87204b842fd474e5cfb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 5
+  knockTime: 0.3
 --- !u!1 &98020211
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +217,8 @@ GameObject:
   - component: {fileID: 98020216}
   - component: {fileID: 98020215}
   - component: {fileID: 98020217}
+  - component: {fileID: 98020218}
+  - component: {fileID: 98020219}
   m_Layer: 0
   m_Name: log
   m_TagString: enemy
@@ -323,7 +327,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012530565, y: -0.42917693}
+  m_Offset: {x: -0.0026952028, y: -0.416063}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -334,7 +338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72186756, y: 0.6529484}
+  m_Size: {x: 0.68908286, y: 0.62672055}
   m_EdgeRadius: 0
 --- !u!50 &98020216
 Rigidbody2D:
@@ -378,6 +382,47 @@ MonoBehaviour:
   chaseRadius: 5
   attackRadius: 1.2
   homePosition: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!61 &98020218
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98020211}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009835362, y: -0.10491085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8394232, y: 1.3311925}
+  m_EdgeRadius: 0
+--- !u!114 &98020219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98020211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694745cb88c87204b842fd474e5cfb64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 4
+  knockTime: 0.3
 --- !u!1 &122682083
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +685,7 @@ GameObject:
   - component: {fileID: 827937622}
   m_Layer: 0
   m_Name: Down Hit Box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -700,9 +745,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 827937619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12955061c213dae45bf070234e74aba5, type: 3}
+  m_Script: {fileID: 11500000, guid: 694745cb88c87204b842fd474e5cfb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 5
+  knockTime: 0.3
 --- !u!1 &876427595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5826473016641310216, guid: 68ce7738bba9ec049b9ce32bc5eddfbc, type: 3}
@@ -17380,7 +17427,7 @@ GameObject:
   - component: {fileID: 925932435}
   m_Layer: 0
   m_Name: Right Hit Box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17441,9 +17488,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 925932432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12955061c213dae45bf070234e74aba5, type: 3}
+  m_Script: {fileID: 11500000, guid: 694745cb88c87204b842fd474e5cfb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 5
+  knockTime: 0.3
 --- !u!1 &1153907756
 GameObject:
   m_ObjectHideFlags: 0
@@ -17751,7 +17800,7 @@ GameObject:
   - component: {fileID: 1238496927}
   m_Layer: 0
   m_Name: Left Hit Box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17815,9 +17864,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238496924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12955061c213dae45bf070234e74aba5, type: 3}
+  m_Script: {fileID: 11500000, guid: 694745cb88c87204b842fd474e5cfb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 5
+  knockTime: 0.3
 --- !u!1 &1324728404
 GameObject:
   m_ObjectHideFlags: 0
@@ -25866,20 +25917,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1411681636
-MonoBehaviour:
+--- !u!61 &1411681636
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411681629}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694745cb88c87204b842fd474e5cfb64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 5
-  knockTime: 0.5
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.13219601}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.56522274, y: 1.0423139}
+  m_EdgeRadius: 0
 --- !u!1001 &1636110764
 PrefabInstance:
   m_ObjectHideFlags: 0

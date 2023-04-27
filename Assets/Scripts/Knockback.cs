@@ -9,28 +9,33 @@ public class Knockback : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D enemy = collision.GetComponent<Rigidbody2D>();
-
-            if (enemy != null)
-            {
-                enemy.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                Vector2 difference = enemy.transform.position - transform.position;
-                difference = difference.normalized * thrust;
-                enemy.AddForce(difference, ForceMode2D.Impulse);
-                StartCoroutine(KnockCo(enemy));
-            }
+            collision.GetComponent<pot>().Smash();
         }
-    }
 
-    private IEnumerator KnockCo(Rigidbody2D enemy)
-    {
-        if (enemy != null)
+        if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("Player"))
         {
-            yield return new WaitForSeconds(knockTime);
-            enemy.velocity = Vector2.zero;
-            enemy.GetComponent<Enemy>().currentState = EnemyState.idle;
+            Rigidbody2D target = collision.GetComponent<Rigidbody2D>();
+
+            if (target != null)
+            {
+                Vector2 difference = target.transform.position - transform.position;
+                difference = difference.normalized * thrust;
+                target.AddForce(difference, ForceMode2D.Impulse);
+
+                if (collision.gameObject.CompareTag("enemy"))
+                {
+                    target.GetComponent<Enemy>().currentState = EnemyState.stagger;
+                    collision.GetComponent<Enemy>().Knock(target, knockTime);
+                }
+
+                if (collision.gameObject.CompareTag("Player"))
+                {
+                    target.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
+                    collision.GetComponent<PlayerMovement>().Knock(knockTime);
+                }    
+            }
         }
     }
 }
