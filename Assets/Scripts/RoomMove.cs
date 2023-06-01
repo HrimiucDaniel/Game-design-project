@@ -30,11 +30,7 @@ public class RoomMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-<<<<<<< Updated upstream
-        if (other.CompareTag("Player"))
-=======
         if (other.CompareTag("Player") && !other.isTrigger)
->>>>>>> Stashed changes
         {
             cam.minPosition += cameraChangemin;
             cam.maxPosition += cameraChangemax;
