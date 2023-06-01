@@ -8,6 +8,8 @@ public class Sign : MonoBehaviour
     public string dialog;
     public bool dialogActive; 
     public bool playerInRange;
+    public SignalSender contextOn;
+    public SignalSender contextOff;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +36,14 @@ public class Sign : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             playerInRange = true;
+            contextOn.Raise();
         }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
+            contextOff.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }
