@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sign : MonoBehaviour
+public class Sign : Interactable
 {
     public GameObject dialogBox;
     public Text dialogText;
     public string dialog;
     public bool dialogActive; 
-    public bool playerInRange;
-    public SignalSender context;
+
 
 
     // Start is called before the first frame update
@@ -32,15 +31,7 @@ public class Sign : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !other.isTrigger) {
-            playerInRange = true;
-            context.Raise();
-        }
-    }
-
-    public void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") &&  !other.isTrigger) {
             context.Raise();
@@ -48,4 +39,6 @@ public class Sign : MonoBehaviour
             dialogBox.SetActive(false);
         }
     }
+
+
 }
