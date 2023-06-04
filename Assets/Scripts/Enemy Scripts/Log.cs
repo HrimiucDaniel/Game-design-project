@@ -7,6 +7,7 @@ public class Log : Enemy
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
+
     public Animator animator;
 
     // Start is called before the first frame update
@@ -78,7 +79,7 @@ public class Log : Enemy
         }
     }
 
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         if (currentState != newState)
         {
