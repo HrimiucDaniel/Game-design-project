@@ -2561,7 +2561,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &800231486
 PrefabInstance:
@@ -6415,13 +6415,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2522730154443607900, guid: eca8d9fb7b1f8b44493d77f2b14c9d58, type: 3}
     - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
+      propertyPath: cameraMax
+      value: 
+      objectReference: {fileID: 11400000, guid: 487e793a8b59e4a408b7e2c19c5399c0, type: 2}
+    - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
+      propertyPath: cameraMin
+      value: 
+      objectReference: {fileID: 11400000, guid: 18e9a5ce9c83e974795e8a4d5623174f, type: 2}
+    - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
       propertyPath: fadeInPanel
       value: 
-      objectReference: {fileID: 8348018031848163981, guid: d54cd5b300bfcfd47b1615cc50ac78e5, type: 3}
+      objectReference: {fileID: 2522730154443607900, guid: eca8d9fb7b1f8b44493d77f2b14c9d58, type: 3}
     - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
       propertyPath: playerStorage
       value: 
       objectReference: {fileID: 11400000, guid: fe0f9d7676f410b4fafd88fc8f0fb3e2, type: 2}
+    - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
+      propertyPath: cameraNewMax.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
+      propertyPath: cameraNewMax.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
+      propertyPath: cameraNewMin.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
+      propertyPath: cameraNewMin.y
+      value: -19
+      objectReference: {fileID: 0}
     - target: {fileID: 2052582600962443167, guid: c835a8da02353944c8d6b6c83626603c, type: 3}
       propertyPath: playerPosition.x
       value: 5.4
