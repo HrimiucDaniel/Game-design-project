@@ -12,6 +12,10 @@ public class Knockback : MonoBehaviour
         {
             collision.GetComponent<pot>().Smash();
         }
+        if (collision.gameObject.CompareTag("switch") && this.gameObject.CompareTag("arrow"))
+        {
+            collision.GetComponent<Switch>().ActivateSwitch();
+        }
 
         if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("Player"))
         {

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - breakable
   - enemy
+  - switch
+  - arrow
   layers:
   - Default
   - TransparentFX
