@@ -17,7 +17,7 @@ public class TitleScreen : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void Quit()
