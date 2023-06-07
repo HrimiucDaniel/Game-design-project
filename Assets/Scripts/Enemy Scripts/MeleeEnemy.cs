@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeEnemy : Log
@@ -29,19 +28,21 @@ public class MeleeEnemy : Log
                 rigidBody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
             }
-        }else if (Vector3.Distance(target.position, transform.position) <= chaseRadius
-        && Vector3.Distance(target.position, transform.position) <= attackRadius) {
+        }
+        else if (Vector3.Distance(target.position, transform.position) <= chaseRadius
+            && Vector3.Distance(target.position, transform.position) <= attackRadius)
+        {
 
             if (currentState == EnemyState.walk
-                && currentState != EnemyState.stagger){
-
+                && currentState != EnemyState.stagger)
+            {
                 StartCoroutine(AttackCo());
-
             }
-
         }
     }
-    public IEnumerator AttackCo() {
+
+    public IEnumerator AttackCo()
+    {
         currentState = EnemyState.attack;
         animator.SetBool("attack", true);
         yield return new WaitForSeconds(1f);
