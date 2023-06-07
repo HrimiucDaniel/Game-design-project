@@ -51211,6 +51211,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4a62b66a8759041b84eb82f9d3f369, type: 3}
+--- !u!1 &1307370844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5652306265393351423, guid: 22137ac7109fc984c9a6693d64e96b5c, type: 3}
+  m_PrefabInstance: {fileID: 5652306264683685143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1307370848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307370844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1324728404
 GameObject:
   m_ObjectHideFlags: 0
