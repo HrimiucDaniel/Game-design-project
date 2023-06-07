@@ -6,9 +6,7 @@ public class Sign : Interactable
     public GameObject dialogBox;
     public Text dialogText;
     public string dialog;
-    public bool dialogActive; 
-
-
+    public bool dialogActive;
 
     // Start is called before the first frame update
     void Start()
@@ -19,26 +17,27 @@ public class Sign : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && playerInRange) {
+        if (Input.GetKeyDown(KeyCode.Return) && playerInRange)
+        {
             if (dialogBox.activeInHierarchy)
             {
                 dialogBox.SetActive(false);
-            }else{
+            }
+            else
+            {
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
         }
-        
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private new void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") &&  !other.isTrigger) {
+        if (other.CompareTag("Player") &&  !other.isTrigger)
+        {
             context.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }
     }
-
-
 }

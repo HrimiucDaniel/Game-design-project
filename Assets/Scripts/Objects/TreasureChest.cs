@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +22,8 @@ public class TreasureChest : Interactable
     {
         anim = GetComponent<Animator>();
         isOpen = storedOpen.RuntimeValue;
-        if (isOpen){
+        if (isOpen)
+        {
             anim.SetBool("opened", true);
         }
     }
@@ -32,15 +31,17 @@ public class TreasureChest : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && playerInRange) {
-            if (!isOpen){
+        if (Input.GetKeyDown(KeyCode.Return) && playerInRange)
+        {
+            if (!isOpen)
+            {
                 OpenChest();
-            }else{
+            }
+            else
+            {
                 ChestAlreadyOpened();
             }
-
         }
-        
     }
 
     public void OpenChest(){
@@ -53,30 +54,29 @@ public class TreasureChest : Interactable
         context.Raise();
         anim.SetBool("opened", true);
         storedOpen.RuntimeValue=isOpen;
-
     }
 
     public void ChestAlreadyOpened(){
         dialogBox.SetActive(false);
        // playerInventory.currentItem = null;
         raiseItem.Raise();
-        
     }
 
-        public void OnTriggerEnter2D(Collider2D other)
+    public new void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger && !isOpen) {
+        if (other.CompareTag("Player") && !other.isTrigger && !isOpen)
+        {
             playerInRange = true;
             context.Raise();
         }
     }
 
-    public void OnTriggerExit2D(Collider2D other)
+    public new void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") &&  !other.isTrigger && !isOpen) {
+        if (other.CompareTag("Player") &&  !other.isTrigger && !isOpen)
+        {
             context.Raise();
             playerInRange = false;;
         }
     }
-    
 }

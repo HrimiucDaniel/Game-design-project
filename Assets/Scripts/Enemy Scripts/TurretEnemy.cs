@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretEnemy : Log
@@ -7,7 +5,7 @@ public class TurretEnemy : Log
     public GameObject projectile;
     public float fireDelay;
     private float fireDelaySeconds;
-    public bool canFire = true;
+    public bool canFire;
 
     void Update()
     {
@@ -27,7 +25,8 @@ public class TurretEnemy : Log
             if (currentState == EnemyState.idle || currentState == EnemyState.walk
                 && currentState != EnemyState.stagger)
             {
-                if(canFire){
+                if(canFire)
+                {
                     Vector3 tempVector = target.transform.position - transform.position;
                     GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
                     current.GetComponent<Projectile>().Launch(tempVector);

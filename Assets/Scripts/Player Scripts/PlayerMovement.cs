@@ -1,13 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public enum PlayerState{
+public enum PlayerState
+{
     walk,
     attack,
     interact,
     stagger,
     idle
 }
+
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerState currentState;
@@ -36,39 +38,51 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentState == PlayerState.interact){
+        if (currentState == PlayerState.interact)
+        {
             return;
         }
+
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+
         if (Input.GetButtonDown("attack")  && currentState != PlayerState.attack
-            && currentState != PlayerState.stagger) {
+            && currentState != PlayerState.stagger)
+        {
             StartCoroutine(AttackCo());
         }
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationAndMove();
         }
-        
     }
-    private IEnumerator AttackCo() {
+
+    private IEnumerator AttackCo()
+    {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
-        if (currentState != PlayerState.interact){
-        currentState = PlayerState.walk;
+
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
         }
     }
+
     public void RaiseItem(){
-        if (playerInventory.currentItem != null) {
-            if (currentState != PlayerState.interact){
+        if (playerInventory.currentItem != null)
+        {
+            if (currentState != PlayerState.interact)
+            {
             animator.SetBool("receive item", true);
             currentState = PlayerState.interact;
             receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
-            }else{
+            }
+            else
+            {
                 animator.SetBool("receive item", false);
                 currentState = PlayerState.idle;
                 receivedItemSprite.sprite = null;
@@ -76,7 +90,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    void UpdateAnimationAndMove(){
+
+    void UpdateAnimationAndMove()
+    {
         if (change != Vector3.zero)
         {
             MoveCharacter();
@@ -84,7 +100,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("moveY", change.y);
             animator.SetBool("moving", true);
 
-        }else{
+        }
+        else
+        {
             animator.SetBool("moving", false);
         }
     }
@@ -93,7 +111,6 @@ public class PlayerMovement : MonoBehaviour
     {
         change.Normalize();
         rigidBody.MovePosition(transform.position + change * speed * Time.fixedDeltaTime);
-
     }
 
     public void Knock(float knockTime, float damage) 
@@ -101,10 +118,13 @@ public class PlayerMovement : MonoBehaviour
         playerHit.Raise();
         currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();
-        if (currentHealth.RuntimeValue > 0){
+        if (currentHealth.RuntimeValue > 0)
+        {
             
             StartCoroutine(KnockCo(knockTime));
-        }else{
+        }
+        else
+        {
             this.gameObject.SetActive(false);
         }
     }

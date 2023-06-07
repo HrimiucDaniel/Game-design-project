@@ -1,9 +1,5 @@
-using UnityEngine;
-
-public class Powerup : MonoBehaviour
+public class DungeonRoom : Room
 {
-    public SignalSender powerupSignal;
-    
     // Start is called before the first frame update
     void Start()
     {
