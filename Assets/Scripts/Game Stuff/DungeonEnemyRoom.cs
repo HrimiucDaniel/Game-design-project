@@ -3,6 +3,7 @@ using UnityEngine;
 public class DungeonEnemyRoom : DungeonRoom
 {
     public Door[] doors;
+    public GameObject chest;
 
     public void CheckEnemies()
     {
@@ -21,6 +22,7 @@ public class DungeonEnemyRoom : DungeonRoom
     {
         for (int i = 0; i < doors.Length; i++)
         {
+            chest.SetActive(true);
             doors[i].Open();
         }
     }

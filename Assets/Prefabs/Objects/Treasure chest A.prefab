@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8985623570869400961
+--- !u!1 &7286428073306821911
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8985623570869400972}
-  - component: {fileID: 8985623570869400963}
-  - component: {fileID: 8985623570869400962}
-  - component: {fileID: 8985623570869400974}
-  - component: {fileID: 8985623570869400975}
-  - component: {fileID: 8985623570869400973}
+  - component: {fileID: 7286428073733420334}
+  - component: {fileID: 7286428073306821904}
+  - component: {fileID: 7286428073306821907}
+  - component: {fileID: 7286428073306821906}
+  - component: {fileID: 7286428073306821909}
+  - component: {fileID: 7286428073306821908}
   m_Layer: 0
   m_Name: Treasure chest A
   m_TagString: Untagged
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8985623570869400972
+--- !u!4 &7286428073733420334
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985623570869400961}
+  m_GameObject: {fileID: 7286428073306821911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 45.45, y: -33.49, z: 0.11737562}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8985623570869400963
+--- !u!212 &7286428073306821904
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985623570869400961}
+  m_GameObject: {fileID: 7286428073306821911}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,14 +88,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8985623570869400962
+--- !u!95 &7286428073306821907
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985623570869400961}
+  m_GameObject: {fileID: 7286428073306821911}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bbfbed26138262e428dd29a448df84ff, type: 2}
@@ -109,13 +109,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &8985623570869400974
+--- !u!61 &7286428073306821906
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985623570869400961}
+  m_GameObject: {fileID: 7286428073306821911}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -135,13 +135,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.375, y: 0.92931175}
   m_EdgeRadius: 0
---- !u!61 &8985623570869400975
+--- !u!61 &7286428073306821909
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985623570869400961}
+  m_GameObject: {fileID: 7286428073306821911}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -161,13 +161,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.375, y: 1.9472466}
   m_EdgeRadius: 0
---- !u!114 &8985623570869400973
+--- !u!114 &7286428073306821908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985623570869400961}
+  m_GameObject: {fileID: 7286428073306821911}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87e8c177e37ceaa4baae16d2dcddbce7, type: 3}

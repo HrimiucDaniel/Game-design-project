@@ -5,7 +5,7 @@ public class TurretEnemy : Log
     public GameObject projectile;
     public float fireDelay;
     private float fireDelaySeconds;
-    public bool canFire;
+    public bool canFire = true;
 
     void Update()
     {
